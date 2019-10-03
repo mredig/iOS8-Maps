@@ -17,6 +17,10 @@ class EarthquakesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		mapView.delegate = self
+
+		mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "QuakeView")
+
 		fetchQuakes()
 	}
 
@@ -42,5 +46,25 @@ class EarthquakesViewController: UIViewController {
 				}
 			}
 		}
+	}
+}
+
+extension EarthquakesViewController: MKMapViewDelegate {
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		guard let quake = annotation as? Quake else { return nil }
+
+		let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "QuakeView") as? MKMarkerAnnotationView
+		annotationView?.glyphImage = #imageLiteral(resourceName: "QuakeIcon")
+
+		switch quake.mag {
+		case 5...:
+			annotationView?.markerTintColor = .red
+		case 3...5:
+			annotationView?.markerTintColor = .orange
+		default:
+			annotationView?.markerTintColor = .yellow
+		}
+
+		return annotationView
 	}
 }
