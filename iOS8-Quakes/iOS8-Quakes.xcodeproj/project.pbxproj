@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		33532AE12346596A00C43DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532AE02346596A00C43DC4 /* AppDelegate.swift */; };
 		33532AE32346596A00C43DC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532AE22346596A00C43DC4 /* SceneDelegate.swift */; };
-		33532AE52346596A00C43DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532AE42346596A00C43DC4 /* ViewController.swift */; };
 		33532AE82346596A00C43DC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33532AE62346596A00C43DC4 /* Main.storyboard */; };
 		33532AEA2346596B00C43DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33532AE92346596B00C43DC4 /* Assets.xcassets */; };
 		33532AED2346596B00C43DC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33532AEB2346596B00C43DC4 /* LaunchScreen.storyboard */; };
@@ -35,7 +34,6 @@
 		33532ADD2346596A00C43DC4 /* iOS8-Quakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS8-Quakes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33532AE02346596A00C43DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33532AE22346596A00C43DC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33532AE42346596A00C43DC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		33532AE72346596A00C43DC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33532AE92346596B00C43DC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33532AEC2346596B00C43DC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				33532B0823466BC000C43DC4 /* QuakeFetcher.swift */,
 				33532AE02346596A00C43DC4 /* AppDelegate.swift */,
 				33532AE22346596A00C43DC4 /* SceneDelegate.swift */,
-				33532AE42346596A00C43DC4 /* ViewController.swift */,
 				33532B0A234672DE00C43DC4 /* EarthquakesViewController.swift */,
 				33532AE62346596A00C43DC4 /* Main.storyboard */,
 				33532AE92346596B00C43DC4 /* Assets.xcassets */,
@@ -218,7 +215,6 @@
 			files = (
 				33532B0923466BC000C43DC4 /* QuakeFetcher.swift in Sources */,
 				33532B0B234672DE00C43DC4 /* EarthquakesViewController.swift in Sources */,
-				33532AE52346596A00C43DC4 /* ViewController.swift in Sources */,
 				33532B0723466AA500C43DC4 /* Quake.swift in Sources */,
 				33532AE12346596A00C43DC4 /* AppDelegate.swift in Sources */,
 				33532AE32346596A00C43DC4 /* SceneDelegate.swift in Sources */,

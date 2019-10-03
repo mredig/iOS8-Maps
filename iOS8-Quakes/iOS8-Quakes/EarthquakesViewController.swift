@@ -19,4 +19,17 @@ class EarthquakesViewController: UIViewController {
 
 		
 	}
+
+	func fetchQuakes() {
+		quakeFetcher.fetchQuakes { (quakes, error) in
+			if let error = error {
+				NSLog("There was an error: \(error)")
+				return
+			}
+
+			if let quakes = quakes {
+				
+			}
+		}
+	}
 }
