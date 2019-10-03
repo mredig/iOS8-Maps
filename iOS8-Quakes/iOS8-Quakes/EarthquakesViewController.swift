@@ -17,7 +17,7 @@ class EarthquakesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		
+		fetchQuakes()
 	}
 
 	func fetchQuakes() {
@@ -28,7 +28,18 @@ class EarthquakesViewController: UIViewController {
 			}
 
 			if let quakes = quakes {
-				
+				print(quakes)
+				DispatchQueue.main.async {
+
+					// region of interest
+					if let firstQuake = quakes.first {
+						let span = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
+						let region = MKCoordinateRegion(center: firstQuake.coordinate, span: span)
+						self.mapView.setRegion(region, animated: true)
+					}
+
+					self.mapView.addAnnotations(quakes)
+				}
 			}
 		}
 	}

@@ -54,10 +54,10 @@ class Quake: NSObject, Decodable {
 
 extension Quake: MKAnnotation {
 	var title: String? {
-		"Hey there!"
+		place
 	}
 	var subtitle: String? {
-		"I'm a subtitle"
+		"\(mag)"
 	}
 	var coordinate: CLLocationCoordinate2D {
 		return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
