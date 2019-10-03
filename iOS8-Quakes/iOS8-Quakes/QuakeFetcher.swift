@@ -71,7 +71,17 @@ class QuakeFetcher {
 				completion(nil, QuakeError.noDataReturned)
 				return
 			}
-			print(data)
+
+			let decoder = JSONDecoder()
+			decoder.dateDecodingStrategy = .millisecondsSince1970
+			do {
+				let quakeResults = try decoder.decode(QuakeResults.self, from: data)
+				completion(quakeResults.features, nil)
+			} catch {
+				NSLog("decoding error: \(error)")
+				completion(nil, error)
+			}
+
 		}.resume()
 	}
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class QuakeResults: Decodable {
 	let features: [Quake]
@@ -48,5 +49,17 @@ class Quake: NSObject, Decodable {
 		self.latitude = try coordinateContainer.decode(Double.self)
 
 		super.init()
+	}
+}
+
+extension Quake: MKAnnotation {
+	var title: String? {
+		"Hey there!"
+	}
+	var subtitle: String? {
+		"I'm a subtitle"
+	}
+	var coordinate: CLLocationCoordinate2D {
+		return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 	}
 }
