@@ -18,6 +18,7 @@
 		33532B0723466AA500C43DC4 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0623466AA500C43DC4 /* Quake.swift */; };
 		33532B0923466BC000C43DC4 /* QuakeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0823466BC000C43DC4 /* QuakeFetcher.swift */; };
 		33532B0B234672DE00C43DC4 /* EarthquakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0A234672DE00C43DC4 /* EarthquakesViewController.swift */; };
+		33532B0D234679A700C43DC4 /* QuakeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0C234679A700C43DC4 /* QuakeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		33532B0623466AA500C43DC4 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
 		33532B0823466BC000C43DC4 /* QuakeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeFetcher.swift; sourceTree = "<group>"; };
 		33532B0A234672DE00C43DC4 /* EarthquakesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesViewController.swift; sourceTree = "<group>"; };
+		33532B0C234679A700C43DC4 /* QuakeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuakeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				33532AE02346596A00C43DC4 /* AppDelegate.swift */,
 				33532AE22346596A00C43DC4 /* SceneDelegate.swift */,
 				33532B0A234672DE00C43DC4 /* EarthquakesViewController.swift */,
+				33532B0C234679A700C43DC4 /* QuakeDetailView.swift */,
 				33532AE62346596A00C43DC4 /* Main.storyboard */,
 				33532AE92346596B00C43DC4 /* Assets.xcassets */,
 				33532AEB2346596B00C43DC4 /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 				33532B0923466BC000C43DC4 /* QuakeFetcher.swift in Sources */,
 				33532B0B234672DE00C43DC4 /* EarthquakesViewController.swift in Sources */,
 				33532B0723466AA500C43DC4 /* Quake.swift in Sources */,
+				33532B0D234679A700C43DC4 /* QuakeDetailView.swift in Sources */,
 				33532AE12346596A00C43DC4 /* AppDelegate.swift in Sources */,
 				33532AE32346596A00C43DC4 /* SceneDelegate.swift in Sources */,
 			);
