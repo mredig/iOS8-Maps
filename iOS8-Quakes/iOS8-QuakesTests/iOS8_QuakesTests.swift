@@ -8,6 +8,10 @@
 
 import XCTest
 
+class QuakeResults: Decodable {
+	let features: [Quake]
+}
+
 class Quake: NSObject, Decodable {
 	let mag: Double
 	let place: String
@@ -32,21 +36,16 @@ class Quake: NSObject, Decodable {
 
 	required init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: QuakeKeys.self)
-
 		let propertiesContainer = try container.nestedContainer(keyedBy: QuakeKeys.PropertiesKeys.self, forKey: .properties)
+		let geoContainer = try container.nestedContainer(keyedBy: QuakeKeys.GeographyKeys.self, forKey: .geometry)
+		var coordinateContainer = try geoContainer.nestedUnkeyedContainer(forKey: .coordinates)
+
 		self.mag = try propertiesContainer.decode(Double.self, forKey: .mag)
 		self.place = try propertiesContainer.decode(String.self, forKey: .place)
 		self.time = try propertiesContainer.decode(Date.self, forKey: .time)
 
-		let geoContainer = try container.nestedContainer(keyedBy: QuakeKeys.GeographyKeys.self, forKey: .geometry)
-		var coordinateContainer = try geoContainer.nestedUnkeyedContainer(forKey: .coordinates)
-		var geoArray = [Double]()
-		while !coordinateContainer.isAtEnd {
-			let value = try coordinateContainer.decode(Double.self)
-			geoArray.append(value)
-		}
-		self.longitude = geoArray[0]
-		self.latitude = geoArray[1]
+		self.longitude = try coordinateContainer.decode(Double.self)
+		self.latitude = try coordinateContainer.decode(Double.self)
 
 		super.init()
 	}
@@ -63,6 +62,25 @@ class iOS8_QuakesTests: XCTestCase {
 
 		//act
 		let quakeSON = try decoder.decode(Quake.self, from: quakeData)
+
+		//assert
+		XCTAssertEqual(1.29, quakeSON.mag, accuracy: 0.001)
+		XCTAssertEqual("10km SSW of Idyllwild, CA", quakeSON.place)
+		XCTAssertEqual(-116.7776667, quakeSON.longitude, accuracy: 0.001)
+		XCTAssertEqual(33.663333299999998, quakeSON.latitude, accuracy: 0.001)
+		XCTAssertEqual(timestamp, quakeSON.time)
+	}
+
+	func testGeoJSONData() throws {
+		//arrange
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .millisecondsSince1970
+		// api stores times in milliseconds
+		let timestamp = Date(timeIntervalSince1970: 1388620296020 / 1000)
+
+		let quakeResults = try decoder.decode(QuakeResults.self, from: geoJSONData)
+
+		let quakeSON = quakeResults.features[0]
 
 		//assert
 		XCTAssertEqual(1.29, quakeSON.mag, accuracy: 0.001)
