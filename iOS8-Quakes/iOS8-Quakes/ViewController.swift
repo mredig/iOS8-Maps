@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		let fetcher = QuakeFetcher()
+
+		fetcher.fetchQuakes { (quakes, error) in
+			if let error = error {
+				NSLog("FAILED: \(error)")
+				return
+			}
+
+			if let quakes = quakes {
+				print(quakes)
+			}
+		}
 	}
 
 

@@ -17,6 +17,7 @@
 		33532B03234659ED00C43DC4 /* Quake.json in Resources */ = {isa = PBXBuildFile; fileRef = 33532B02234659ED00C43DC4 /* Quake.json */; };
 		33532B0523465B7400C43DC4 /* QuakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0423465B7400C43DC4 /* QuakeData.swift */; };
 		33532B0723466AA500C43DC4 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0623466AA500C43DC4 /* Quake.swift */; };
+		33532B0923466BC000C43DC4 /* QuakeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33532B0823466BC000C43DC4 /* QuakeFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		33532B02234659ED00C43DC4 /* Quake.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Quake.json; sourceTree = "<group>"; };
 		33532B0423465B7400C43DC4 /* QuakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuakeData.swift; sourceTree = "<group>"; };
 		33532B0623466AA500C43DC4 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
+		33532B0823466BC000C43DC4 /* QuakeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				33532B0623466AA500C43DC4 /* Quake.swift */,
+				33532B0823466BC000C43DC4 /* QuakeFetcher.swift */,
 				33532AE02346596A00C43DC4 /* AppDelegate.swift */,
 				33532AE22346596A00C43DC4 /* SceneDelegate.swift */,
 				33532AE42346596A00C43DC4 /* ViewController.swift */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33532B0923466BC000C43DC4 /* QuakeFetcher.swift in Sources */,
 				33532AE52346596A00C43DC4 /* ViewController.swift in Sources */,
 				33532B0723466AA500C43DC4 /* Quake.swift in Sources */,
 				33532AE12346596A00C43DC4 /* AppDelegate.swift in Sources */,
